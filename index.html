@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <script type="text/javascript" src="script.js"></script>
-    <title>Woah</title>
-    <script>
-        var weatherDat = fetch();
-    </script>
+    <script src="./jScript-1.js"></script>
 </head>
 <html>
     <body>
-        <h1>Pog</h1>
+        <h1>
+            Vejret vælger viborg hvis du ikke indtaster en by
+        </h1>
+        <textarea id="textBox"></textarea>
+        <button onclick="FetchWeatherData()">hvordan er vejret?</button>
+        <div id="temp"></div>
     </body>
 </html>
