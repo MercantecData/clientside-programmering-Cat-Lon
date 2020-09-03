@@ -1,4 +1,4 @@
-var url = "https://api.openweathermap.org/data/2.5/weather?q=Viborg&appid=1d471668edec21b6fe58ad100710764d"
+var url = "https://api.openweathermap.org/data/2.5/weather?q=Viborg&appid=1d471668edec21b6fe58ad100710764d&lang=da&units=metric"
 var promise
 var jPromise
 var userInput
@@ -7,7 +7,7 @@ var wDisplayCount = 0
 
 function NewWeatherDisplay()
 {
-    document.getElementById('body').innerHTML += `<textarea id=\"textBox${wDisplayCount}\"></textarea> <button onclick=\"FetchWeatherData(${wDisplayCount})\">hvordan er vejret?</button><div id=\"temp${wDisplayCount}\"></div>`
+    document.getElementById('body').innerHTML += `<div id=\"temp${wDisplayCount}\"><textarea id=\"textBox${wDisplayCount}\"></textarea> <button onclick=\"FetchWeatherData(${wDisplayCount})\">hvordan er vejret?</button></div>`
     wDisplayCount++
 }
 
@@ -17,7 +17,7 @@ function FetchWeatherData(num)
     userInput = document.getElementById(`textBox${num}`).value
     if(document.getElementById(`textBox${num}`)!= undefined)
     {
-        url =  "https://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&appid=1d471668edec21b6fe58ad100710764d"
+        url =  "https://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&appid=1d471668edec21b6fe58ad100710764d&lang=da&units=metric"
         //storedCities[num] = url
     }
     promise = fetch(url)
@@ -29,5 +29,5 @@ function FetchWeatherData(num)
 
 function PrintWeatherData(num)
 {
-    document.getElementById(`temp${num}`).innerHTML = "Temperatur: " + jPromise.main["temp"] + "<br>" +  "Feel: " + jPromise.main["feels_like"] + "<br>" +  "Max Temp: " + jPromise.main["temp_max"] + "<br>" + "Min Temp: " + jPromise.main["temp_min"]
+    document.getElementById(`temp${num}`).innerHTML = `<img src=\"http://openweathermap.org/img/wn/${jPromise.weather[0].icon}@2x.png\">`+ "<br>" + jPromise.weather[0].description + "<br>" +  "Temperatur: " + jPromise.main["temp"] + "<br>" +  "Feel: " + jPromise.main["feels_like"] + "<br>" +  "Max Temp: " + jPromise.main["temp_max"] + "<br>" + "Min Temp: " + jPromise.main["temp_min"]
 }
