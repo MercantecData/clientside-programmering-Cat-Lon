@@ -9,7 +9,7 @@ function NewWeatherDisplay()
 {
     document.getElementById('body').innerHTML += `<div id=\"temp${wDisplayCount}\"><textarea id=\"textBox${wDisplayCount}\"></textarea> <button onclick=\"FetchWeatherData(${wDisplayCount})\">hvordan er vejret?</button></div>`
     wDisplayCount++
-}
+}//comment
 
 function FetchWeatherData(num)
 {
