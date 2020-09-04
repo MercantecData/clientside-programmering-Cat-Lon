@@ -1,5 +1,4 @@
 body{
-background-color: dimgray;
 font-family: monospace, monospace, monospace
 }
 p{
@@ -7,4 +6,14 @@ p{
 }
 h1{
     padding-left: 10px;
+}
+.wDisplay{
+    display: inline-block;
+    width: 200px;
+    margin-right: 20px;
+    background-color: dimgray;
+}
+img{
+    border-style: dotted;
+    border-width: 2px;
 }

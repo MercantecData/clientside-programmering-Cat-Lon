@@ -7,7 +7,7 @@ var wDisplayCount = 0
 
 function NewWeatherDisplay()
 {
-    document.getElementById('body').innerHTML += `<div id=\"temp${wDisplayCount}\"><textarea id=\"textBox${wDisplayCount}\"></textarea> <button onclick=\"FetchWeatherData(${wDisplayCount})\">hvordan er vejret?</button></div>`
+    document.getElementById('body').innerHTML += `<div id=\"temp${wDisplayCount}\" name="temp" class="wDisplay"><textarea id=\"textBox${wDisplayCount}\"></textarea> <button onclick=\"FetchWeatherData(${wDisplayCount})\">hvordan er vejret?</button></div>`
     wDisplayCount++
 }//comment
 
@@ -29,5 +29,5 @@ function FetchWeatherData(num)
 
 function PrintWeatherData(num)
 {
-    document.getElementById(`temp${num}`).innerHTML = `<img src=\"http://openweathermap.org/img/wn/${jPromise.weather[0].icon}@2x.png\">`+ "<br>" + jPromise.weather[0].description + "<br>" +  "Temperatur: " + jPromise.main["temp"] + "<br>" +  "Feel: " + jPromise.main["feels_like"] + "<br>" +  "Max Temp: " + jPromise.main["temp_max"] + "<br>" + "Min Temp: " + jPromise.main["temp_min"]
+    document.getElementById(`temp${num}`).innerHTML = `<img src=\"http://openweathermap.org/img/wn/${jPromise.weather[0].icon}@2x.png\">`+ "<br>" + jPromise.name + "<br>" + jPromise.weather[0].description + "<br>" +  "Temperatur: " + jPromise.main["temp"] + "<br>" +  "Feel: " + jPromise.main["feels_like"] + "<br>" +  "Max Temp: " + jPromise.main["temp_max"] + "<br>" + "Min Temp: " + jPromise.main["temp_min"]
 }
