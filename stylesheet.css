@@ -7,13 +7,15 @@ p{
 h1{
     padding-left: 10px;
 }
-.wDisplay{
+#weatherDis{
     display: inline-block;
-    width: 200px;
     margin-right: 20px;
     background-color: dimgray;
 }
 img{
     border-style: dotted;
     border-width: 2px;
+}
+#templateHolder{
+    visibility: hidden;
 }
